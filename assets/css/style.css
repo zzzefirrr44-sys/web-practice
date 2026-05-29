@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #333;
 }
 
 /* =========================
@@ -15,29 +14,55 @@ body {
 
 .hero {
     height: 100vh;
-    background: url("assets/img/hero-bg.jpg") center/cover no-repeat;
+    width: 100%;
     position: relative;
-    color: white;
+    overflow: hidden;
 }
 
-/* затемнення */
-.overlay {
+/* 🔥 ФОН-КАРТИНКА (через IMG) */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* затемнення поверх фону */
+.hero::before {
+    content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
-/* HEADER */
+/* щоб контент був поверх */
+.header,
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 .header {
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
+
+    color: white;
 }
 
 .logo {
@@ -51,23 +76,21 @@ body {
     margin-left: 20px;
     font-size: 12px;
     letter-spacing: 1px;
-    transition: 0.3s;
 }
 
-.header nav a:hover {
-    color: hotpink;
-}
+/* =========================
+   HERO CONTENT
+========================= */
 
-/* HERO CONTENT */
 .hero-content {
-    position: relative;
-    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    color: white;
 }
 
 .hero-content h1 {
@@ -80,7 +103,10 @@ body {
     font-size: 14px;
 }
 
-/* TIMER */
+/* =========================
+   TIMER
+========================= */
+
 .timer {
     display: flex;
     gap: 15px;
@@ -88,16 +114,17 @@ body {
 }
 
 .timer div {
-    background: rgba(255, 105, 180, 0.85);
-    padding: 15px;
-    border-radius: 50%;
+    background: rgba(255,105,180,0.85);
     width: 85px;
     height: 85px;
+    border-radius: 50%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    color: white;
 }
 
 .timer span {
@@ -109,22 +136,22 @@ body {
     font-size: 10px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
 .btn {
     margin-top: 25px;
     padding: 12px 22px;
+
     border: none;
     border-radius: 25px;
+
     background: white;
     color: hotpink;
+
     cursor: pointer;
     font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: hotpink;
-    color: white;
 }
 
 /* =========================
@@ -145,16 +172,17 @@ body {
 .date {
     margin-top: 10px;
     font-weight: 500;
-    font-size: 14px;
 }
 
 .text {
     margin-top: 5px;
     color: gray;
-    font-size: 13px;
 }
 
-/* COUPLE BLOCK */
+/* =========================
+   COUPLE BLOCK
+========================= */
+
 .couple {
     margin-top: 50px;
     display: flex;
@@ -166,7 +194,6 @@ body {
 
 .person {
     text-align: center;
-    max-width: 220px;
 }
 
 .person img {
@@ -174,32 +201,26 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .person h3 {
-    margin-top: 12px;
+    margin-top: 10px;
     color: hotpink;
-    font-size: 18px;
 }
 
 .person p {
-    margin-top: 8px;
     font-size: 12px;
     color: gray;
+    margin-top: 8px;
 }
 
-/* HEART */
 .heart {
     font-size: 45px;
     color: hotpink;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* =========================
-   MOBILE ADAPTIVE
+   MOBILE
 ========================= */
 
 @media (max-width: 768px) {
@@ -218,11 +239,6 @@ body {
         gap: 10px;
     }
 
-    .header nav a {
-        display: block;
-        margin: 5px 0;
-    }
-
     .couple {
         flex-direction: column;
         gap: 40px;
@@ -233,7 +249,7 @@ body {
         height: 160px;
     }
 
-    .heart {
-        font-size: 35px;
+    .hero-content h1 {
+        font-size: 45px;
     }
 }
