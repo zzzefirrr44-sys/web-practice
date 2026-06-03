@@ -1,422 +1,396 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Montserrat',sans-serif;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* ==========================
    HERO
 ========================== */
 
-.hero{
-    height:100vh;
-    position:relative;
-    overflow:hidden;
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-bg{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
 }
 
 .header,
-.hero-content{
-    position:relative;
-    z-index:2;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-.header{
-    width:90%;
-    margin:auto;
+.header {
+    width: 90%;
+    margin: auto;
 
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-    color:white;
-    font-size:30px;
-    font-family:'Great Vibes',cursive;
+.logo {
+    color: white;
+    font-size: 30px;
+    font-family: 'Great Vibes', cursive;
 }
 
-.header nav a{
-    text-decoration:none;
-    color:white;
-    margin-left:20px;
-    font-size:12px;
-    letter-spacing:1px;
+.header nav a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
-.hero-content{
-    height:100%;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    color:white;
+.hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-.hero-content h1{
-    font-family:'Great Vibes',cursive;
-    font-size:90px;
-    font-weight:400;
+.hero-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    font-weight: 400;
 }
 
-.hero-content p{
-    margin-top:10px;
-    letter-spacing:2px;
+.hero-content p {
+    margin-top: 10px;
+    letter-spacing: 2px;
 }
 
-.timer{
-    display:flex;
-    gap:15px;
-    margin-top:30px;
+.timer {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
 }
 
-.timer div{
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:rgba(255,91,156,.85);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+.timer div {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 91, 156, .85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.timer span{
-    font-size:22px;
-    font-weight:600;
+.timer span {
+    font-size: 22px;
+    font-weight: 600;
 }
 
-.timer small{
-    font-size:11px;
+.timer small {
+    font-size: 11px;
 }
 
-.btn{
-    margin-top:30px;
-
-    border:none;
-    border-radius:30px;
-
-    background:white;
-    color:#ff5b9c;
-
-    padding:14px 28px;
-
-    cursor:pointer;
+.btn {
+    margin-top: 30px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff5b9c;
+    padding: 14px 28px;
+    cursor: pointer;
 }
 
 /* ==========================
    ABOUT
 ========================== */
 
-.about{
-    padding:90px 20px;
+.about {
+    padding: 90px 20px;
 }
 
-.about-header{
-    text-align:center;
+.about-header {
+    text-align: center;
 }
 
-.about-header h2{
-    font-family:'Great Vibes',cursive;
-    color:#ff5b9c;
-    font-size:65px;
-    font-weight:400;
+.about-header h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #ff5b9c;
+    font-size: 65px;
+    font-weight: 400;
 }
 
-.date{
-    margin-top:15px;
-    font-size:30px;
-    color:#222;
+.date {
+    margin-top: 15px;
+    font-size: 30px;
+    color: #222;
 }
 
-.subtitle{
-    margin-top:15px;
-    color:#b4b4b4;
+.subtitle {
+    margin-top: 15px;
+    color: #b4b4b4;
 }
 
 /* ==========================
    COUPLE
 ========================== */
 
-.couple{
-    margin-top:70px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.couple {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.person-info{
-    width:320px;
+.person-info {
+    width: 320px;
 }
 
-.person-info.left{
-    text-align:right;
-    padding-right:20px;
+.person-info.left {
+    text-align: right;
+    padding-right: 20px;
 }
 
-.person-info.right{
-    text-align:left;
-    padding-left:20px;
+.person-info.right {
+    text-align: left;
+    padding-left: 20px;
 }
 
-.person-info h3{
-    font-family:'Great Vibes',cursive;
-    color:#ff5b9c;
-    font-size:34px;
-    font-weight:400;
-    margin-bottom:15px;
+.person-info h3 {
+    font-family: 'Great Vibes', cursive;
+    color: #ff5b9c;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 15px;
 }
 
-.person-info p{
-    color:#888;
-    line-height:1.8;
-    font-size:14px;
+.person-info p {
+    color: #888;
+    line-height: 1.8;
+    font-size: 14px;
 }
 
-.photos{
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:10px;
+.photos {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.photos img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
+.photos img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.heart{
-    position:absolute;
+.heart {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff5b9c;
+    font-size: 24px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+}
 
-    left:50%;
-    top:50%;
+/* ==========================
+   EVENTS
+========================== */
 
-    transform:translate(-50%,-50%);
+.events {
+    position: relative;
+    min-height: 850px;
+    overflow: hidden;
 
-    width:60px;
-    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    background:white;
+.events-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    border-radius:50%;
+.events-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 1;
+}
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.events-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+}
 
-    color:#ff5b9c;
-    font-size:24px;
+.events-subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
 
-    box-shadow:0 0 15px rgba(0,0,0,.15);
+.events-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+
+.events-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-card {
+    width: 470px;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(4px);
+}
+
+.event-card h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.event-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, .4);
+    margin: 18px 0 25px;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.event-info span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event-info p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.event-text {
+    color: rgba(255, 255, 255, .9);
+    line-height: 2;
+    font-size: 14px;
 }
 
 /* ==========================
    MOBILE
 ========================== */
 
-@media(max-width:992px){
-
-    .couple{
-        flex-direction:column;
-        gap:40px;
+@media (max-width: 992px) {
+    .couple {
+        flex-direction: column;
+        gap: 40px;
     }
 
-    .person-info{
-        width:100%;
-        text-align:center !important;
-        padding:0 !important;
+    .person-info {
+        width: 100%;
+        text-align: center !important;
+        padding: 0 !important;
     }
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-    .hero-content h1{
-        font-size:50px;
+    .hero-content h1 {
+        font-size: 50px;
     }
 
-    .timer{
-        flex-wrap:wrap;
-        justify-content:center;
+    .timer {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .timer div{
-        width:70px;
-        height:70px;
+    .timer div {
+        width: 70px;
+        height: 70px;
     }
 
-    .about-header h2{
-        font-size:50px;
+    .about-header h2 {
+        font-size: 50px;
     }
 
-    .date{
-        font-size:22px;
+    .date {
+        font-size: 22px;
     }
 
-    .photos img{
-        width:120px;
-        height:120px;
+    .photos img {
+        width: 120px;
+        height: 120px;
     }
 
-    .heart{
-        width:50px;
-        height:50px;
-        font-size:18px;
+    .heart {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
     }
-    .events-cards{
-    flex-direction:column;
-    align-items:center;
-}
 
-.event-card{
-    width:90%;
-}
+    .events-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.events-title{
-    font-size:52px;
-}
-    /* ==========================
-   EVENTS
-========================== */
+    .event-card {
+        width: 90%;
+    }
 
-.events{
-    position:relative;
-    min-height:850px;
-    overflow:hidden;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.events-bg{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-}
-
-.events-overlay{
-    position:absolute;
-    inset:0;
-
-    background:rgba(0,0,0,.35);
-    z-index:1;
-}
-
-.events-content{
-    position:relative;
-    z-index:2;
-
-    width:100%;
-    max-width:1200px;
-
-    text-align:center;
-    color:white;
-}
-
-.events-subtitle{
-    font-size:11px;
-    letter-spacing:4px;
-    margin-bottom:15px;
-}
-
-.events-title{
-    font-family:'Great Vibes',cursive;
-    font-size:64px;
-    font-weight:400;
-    margin-bottom:70px;
-}
-
-.events-cards{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
-
-.event-card{
-    width:470px;
-
-    padding:35px;
-
-    border:1px solid rgba(255,255,255,.6);
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(4px);
-}
-
-.event-card h3{
-    font-size:18px;
-    letter-spacing:2px;
-    font-weight:500;
-}
-
-.event-line{
-    width:100%;
-    height:1px;
-
-    background:rgba(255,255,255,.4);
-
-    margin:18px 0 25px;
-}
-
-.event-info{
-    display:flex;
-    justify-content:space-around;
-
-    margin-bottom:30px;
-}
-
-.event-info span{
-    display:block;
-    font-size:18px;
-    margin-bottom:10px;
-}
-
-.event-info p{
-    font-size:14px;
-    line-height:1.8;
-}
-
-.event-text{
-    color:rgba(255,255,255,.9);
-
-    line-height:2;
-    font-size:14px;
-}
+    .events-title {
+        font-size: 52px;
+    }
 }
