@@ -1,231 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Wedding Landing</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <title>Jofrey & Sheila - Wedding Perfect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-<!-- HERO -->
-
-<section class="hero">
-
-    <img src="assets/images/wedding.jpg"
-         alt="Wedding"
-         class="hero-bg">
-
-    <header class="header">
-
-        <div class="logo">Wedding</div>
-
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#">STORY</a>
-            <a href="#">SERVICES</a>
-            <a href="#">GALLERY</a>
-            <a href="#">CONTACT</a>
-        </nav>
-
+    <header class="hero">
+        <div class="container hero-container">
+            <nav class="navbar">
+                <div class="logo">Wedding</div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#">STORY</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hero-content">
+                <h1 class="main-title">Jofrey & Sheila</h1>
+                <p class="sub-title">We Are Getting Married</p>
+                
+                <div class="countdown">
+                    <div class="countdown-item"><span class="number">66</span><span class="label">DAYS</span></div>
+                    <div class="countdown-item"><span class="number">7</span><span class="label">HOURS</span></div>
+                    <div class="countdown-item"><span class="number">49</span><span class="label">MINUTES</span></div>
+                    <div class="countdown-item"><span class="number">1</span><span class="label">SECOND</span></div>
+                </div>
+                
+                <a href="#" class="btn-save-date">SAVE THE DATE</a>
+            </div>
+        </div>
     </header>
 
-    <div class="hero-content">
-
-        <h1>Joefrey & Sheila</h1>
-
-        <p>We Are Getting Married</p>
-
-        <div class="timer">
-
-            <div>
-                <span>66</span>
-                <small>DAYS</small>
+    <section class="hello-section">
+        <div class="container-narrow text-center">
+            <h2 class="section-title-script text-pink-fix">Hello!</h2>
+            <p class="wedding-date">November 28th, 2016 New York, USA</p>
+            <p class="wedding-invite">We invited you to celebrate our wedding</p>
+            
+            <div class="couple-profiles">
+                <div class="profile-card text-right">
+                    <h3 class="profile-name">Jofrey Mahusay</h3>
+                    <p class="profile-text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+                </div>
+                
+                <div class="profile-images">
+                    <img src="assets/images/icons/groom.jpg" alt="Groom" class="circle-img">
+                    <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+                    <img src="assets/images/icons/bride.jpg" alt="Bride" class="circle-img">
+                </div>
+                
+                <div class="profile-card text-left">
+                    <h3 class="profile-name">Sheila Mahusay</h3>
+                    <p class="profile-text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+                </div>
             </div>
-
-            <div>
-                <span>7</span>
-                <small>HOURS</small>
-            </div>
-
-            <div>
-                <span>49</span>
-                <small>MINUTES</small>
-            </div>
-
-            <div>
-                <span>1</span>
-                <small>SECOND</small>
-            </div>
-
         </div>
+    </section>
 
-        <button class="btn">
-            SAVE THE DATE
-        </button>
-
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="about">
-
-    <div class="about-header">
-
-        <h2>Hello!</h2>
-
-        <p class="date">
-            November 28th, 2016 New York, USA
-        </p>
-
-        <p class="subtitle">
-            We invited you to celebrate our wedding
-        </p>
-
-    </div>
-
-    <div class="couple">
-
-        <div class="person-info left">
-
-            <h3>Joefrey Mahusay</h3>
-
-            <p>
-                Far far away, behind the word mountains,
-                far from the countries Vokalia and
-                Consonantia, there live the blind texts.
-                Separated they live in Bookmarksgrove.
-            </p>
-
-        </div>
-
-        <div class="photos">
-
-            <img src="assets/images/icons/selfie.jpg"
-                 alt="Groom">
-
-            <div class="heart">
-                ❤
+    <section class="events-section">
+        <div class="container events-inner">
+            <div class="container-narrow text-center text-white">
+                <span class="upper-tag text-pink">OUR SPECIAL EVENTS</span>
+                <h2 class="section-title-script text-white">Wedding Events</h2>
             </div>
-
-            <img src="assets/images/icons/selfie-woman.jpg"
-                 alt="Bride">
-
-        </div>
-
-        <div class="person-info right">
-
-            <h3>Sheila Mahusay</h3>
-
-            <p>
-                Far far away, behind the word mountains,
-                far from the countries Vokalia and
-                Consonantia, there live the blind texts.
-                Separated they live in Bookmarksgrove.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- EVENTS -->
-
-<section class="events">
-
-    <div class="events-overlay"></div>
-
-    <img src="assets/images/event.jpg"
-         alt="Wedding Events"
-         class="events-bg">
-
-    <div class="events-content">
-
-        <p class="events-subtitle">
-            OUR SPECIAL EVENTS
-        </p>
-
-        <h2 class="events-title">
-            Wedding Events
-        </h2>
-
-        <div class="events-cards">
-
-            <div class="event-card">
-
-                <h3>MAIN CEREMONY</h3>
-
-                <div class="event-line"></div>
-
-                <div class="event-info">
-
-                    <div>
-                        <span>🕒</span>
-                        <p>4:00 PM</p>
-                        <p>6:00 PM</p>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <h3>MAIN CEREMONY</h3>
+                    <div class="event-meta">
+                        <div><i class="fa-regular fa-clock"></i> 4:00 PM - 6:00 PM</div>
+                        <div><i class="fa-regular fa-calendar"></i> Monday 28 November, 2016</div>
                     </div>
-
-                    <div>
-                        <span>📅</span>
-                        <p>Monday 28</p>
-                        <p>November, 2016</p>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+                
+                <div class="event-card">
+                    <h3>WEDDING PARTY</h3>
+                    <div class="event-meta">
+                        <div><i class="fa-regular fa-clock"></i> 7:00 PM - 12:00 AM</div>
+                        <div><i class="fa-regular fa-calendar"></i> Monday 28 November, 2016</div>
                     </div>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="story-section">
+        <div class="container">
+            <div class="container-narrow text-center">
+                <span class="upper-tag">WE LOVE EACH OTHER</span>
+                <h2 class="section-title-script text-pink-fix">Our Story</h2>
+                <p class="section-subtitle">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>First We Meet</h3>
+                        <span class="date">DECEMBER 25, 2015</span>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    </div>
+                    <div class="timeline-img-center">
+                        <img src="assets/images/icons/story-1.jpg" alt="Story 1">
+                    </div>
                 </div>
 
-                <p class="event-text">
-                    Far far away, behind the word mountains,
-                    far from the countries Vokalia and Consonantia,
-                    there live the blind texts. Separated they live
-                    in Bookmarksgrove right at the coast of the
-                    Semantics, a large language ocean.
-                </p>
-
-            </div>
-
-            <div class="event-card">
-
-                <h3>WEDDING PARTY</h3>
-
-                <div class="event-line"></div>
-
-                <div class="event-info">
-
-                    <div>
-                        <span>🕒</span>
-                        <p>7:00 PM</p>
-                        <p>12:00 AM</p>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>First Date</h3>
+                        <span class="date">DECEMBER 28, 2015</span>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     </div>
-
-                    <div>
-                        <span>📅</span>
-                        <p>Monday 28</p>
-                        <p>November, 2016</p>
+                    <div class="timeline-img-center">
+                        <img src="assets/images/icons/story-2.jpg" alt="Story 2">
                     </div>
-
                 </div>
 
-                <p class="event-text">
-                    Far far away, behind the word mountains,
-                    far from the countries Vokalia and Consonantia,
-                    there live the blind texts. Separated they live
-                    in Bookmarksgrove right at the coast of the
-                    Semantics, a large language ocean.
-                </p>
-
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>In A Relationship</h3>
+                        <span class="date">JANUARY 1, 2016</span>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    </div>
+                    <div class="timeline-img-center">
+                        <img src="assets/images/icons/story-3.jpg" alt="Story 3">
+                    </div>
+                </div>
             </div>
-
         </div>
+    </section>
 
-    </div>
+    <section class="gallery-section">
+        <div class="container">
+            <div class="container-narrow text-center">
+                <span class="upper-tag">OUR MEMORIES</span>
+                <h2 class="section-title-script text-pink-fix">Wedding Gallery</h2>
+                <p class="section-subtitle">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-1.jpg" alt="Gallery 1">
+                    <div class="gallery-overlay"><h4>Two Glas of Juice</h4><span>14 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-2.jpg" alt="Gallery 2">
+                    <div class="gallery-overlay"><h4>Timer starts now!</h4><span>30 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-3.jpg" alt="Gallery 3">
+                    <div class="gallery-overlay"><h4>Beautiful sunset</h4><span>20 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-4.jpg" alt="Gallery 4">
+                    <div class="gallery-overlay"><h4>Company's Conference Room</h4><span>12 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-5.jpg" alt="Gallery 5">
+                    <div class="gallery-overlay"><h4>Useful baskets</h4><span>50 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-6.jpg" alt="Gallery 6">
+                    <div class="gallery-overlay"><h4>Skater man in the road</h4><span>45 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-7.jpg" alt="Gallery 7">
+                    <div class="gallery-overlay"><h4>We love each other</h4><span>55 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-8.jpg" alt="Gallery 8">
+                    <div class="gallery-overlay"><h4>Sweet tarts now!</h4><span>10 PHOTOS</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-9.jpg" alt="Gallery 9">
+                    <div class="gallery-overlay"><h4>Beautiful sunset</h4><span>90 PHOTOS</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <section class="stats-section">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-number">190</div>
+                <div class="stat-label">GUESTS INVITED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-utensils"></i></div>
+                <div class="stat-number">380</div>
+                <div class="stat-label">MEALS SERVED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <div class="stat-number">153</div>
+                <div class="stat-label">DAYS APPROVED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="stat-number">891</div>
+                <div class="stat-label">HOURS SPENT</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wishes-section">
+        <div class="container">
+            <div class="container-narrow text-center">
+                <span class="upper-tag">BEST WISHES</span>
+                <h2 class="section-title-script text-pink-fix">Friends Wishes</h2>
+            </div>
+            
+            <div class="testimonial-container">
+                <img src="assets/images/icons/friends.jpg" alt="User" class="testimonial-avatar">
+                <h4 class="testimonial-author">JOHN DOE, VIA <span class="twitter-brand">TWITTER</span></h4>
+                <blockquote class="testimonial-text">
+                    "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="container-narrow text-center">
+                <h2 class="section-title-script text-pink-fix">We Offer Services</h2>
+                <p class="section-subtitle">Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            </div>
+            
+            <div class="services-content">
+                <div class="services-list">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                        <div class="service-text">
+                            <h4>WE ORGANIZED EVENTS</h4>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fa-regular fa-image"></i></div>
+                        <div class="service-text">
+                            <h4>PHOTOSHOOT</h4>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="service-text">
+                            <h4>VIDEO EDITING</h4>
+                            <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="services-video-mock">
+                    <img src="assets/images/event.jpg" alt="Video cover">
+                    <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="attending-section">
+        <div class="container attending-inner text-center text-white">
+            <h2 class="section-title-script text-white">Are You Attending?</h2>
+            <p class="attending-subtitle">Please Fill-up the form to notify you that you're attending. Thanks.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="copyright">© 2016 Free HTML5. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
