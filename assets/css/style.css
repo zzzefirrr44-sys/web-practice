@@ -80,7 +80,7 @@ body {
     margin-bottom: 70px;
 }
 
-/* --- 1. HERO SECTION (Шлях змінено на ../images/wedding.jpg) --- */
+/* --- 1. HERO SECTION (ТОЧНА ВЕРСТКА ЗА ПІКСЕЛЯМИ З FIGMA) --- */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../images/wedding.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -100,6 +100,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1170px; /* Ширина навбару з макета */
+    margin: 0 auto;
+    width: 100%;
 }
 
 .navbar .logo {
@@ -149,105 +152,214 @@ body {
     margin: auto 0;
 }
 
+/* Розміри головного блоку з іменами */
 .main-title {
     font-family: var(--font-script);
-    font-size: 82px;
+    font-size: 72px; /* Зменшено для точного вписання в 150px висоти */
     font-weight: 400;
     margin-bottom: 5px;
+    max-width: 552.83px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sub-title {
-    font-size: 15px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
+    font-family: 'Work Sans', sans-serif; /* ПІДКЛЮЧАЄМО WORK SANS */
+    font-size: 20px; 
+    font-weight: 300; /* Якщо у Figma він виглядає жирнішим/тоншим, можна змінити на 300 або 500 */
+    letter-spacing: 5px;
+    text-transform: none;
     margin-bottom: 50px;
+    white-space: nowrap; 
+    text-align: center;
+    height: 30px;
+    
 }
 
+/* КРУЖЕЧКИ ТАМЕРА (Точно 100х100px та тонкий шрифт) */
 .countdown {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .countdown-item {
-    background: rgba(241, 78, 149, 0.75);
-    width: 105px;
-    height: 105px;
+    background: rgba(241, 78, 149, 0.85); /* Більш насичений рожевий */
+    width: 100px;   /* СУВОРО за Figma */
+    height: 100px;  /* СУВОРО за Figma */
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.countdown-item:hover {
-    transform: scale(1.06);
-    box-shadow: var(--glow-effect);
+.countdown-item .number { 
+    font-size: 24px; 
+    font-weight: 300; /* ТОНКИЙ ШРИФТ, прибрали жирність */
+    line-height: 1.1; 
 }
 
-.countdown-item .number { font-size: 26px; font-weight: 700; line-height: 1; }
-.countdown-item .label { font-size: 9px; letter-spacing: 1px; }
+.countdown-item .label { 
+    font-size: 9px; 
+    font-weight: 400;
+    letter-spacing: 1px; 
+    opacity: 0.9;
+}
 
-/* ІДЕАЛЬНА ОВАЛЬНА РОЖЕВА КНОПКА З ЕФЕКТОМ СВІТІННЯ */
+/* ІДЕАЛЬНА БІЛА КНОПКА З РОЖЕВИМ ШРИФТОМ */
+/* ОНОВЛЕНА КНОПКА — ТРОХИ ЗБІЛЬШЕНА ДЛЯ ІДЕАЛЬНОГО ТЕКСТУ */
 .btn-save-date {
     display: inline-block;
-    padding: 16px 45px;
-    background-color: var(--primary-pink);
-    color: var(--white);
+    width: 165px;       /* Трохи розширили, щоб кнопка виглядала солідно, як у Figma */
+    height: 51px;       /* Висота суворо за Figma */
+    line-height: 47px;  /* Ідеальне центрування по вертикалі */
+    padding: 0;        
+    background-color: var(--white); 
+    color: var(--primary-pink);     
     border: 2px solid var(--primary-pink);
     text-decoration: none;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     border-radius: 50px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .btn-save-date:hover {
-    background-color: transparent;
-    color: var(--primary-pink);
-    box-shadow: var(--glow-effect), 0 8px 20px rgba(241, 78, 149, 0.4);
-    transform: translateY(-2px);
+    background-color: var(--primary-pink);
+    color: var(--white);
+    box-shadow: var(--glow-effect);
+    transform: translateY(-1px);
 }
 
-/* --- 2. HELLO SECTION --- */
+/* ==========================================================================
+   2. HELLO SECTION (ПОВНА ЗГРУПОВАНА ВЕРСТКА ЗА ПІКСЕЛЯМИ З FIGMA)
+   ========================================================================== */
+
 .hello-section { 
-    padding: 100px 0; 
+    padding: 120px 0; 
     background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Відступ між верхнім текстом і нижніми профілями */
 }
-.wedding-date { font-size: 18px; font-weight: 600; color: #333333; margin-bottom: 8px; }
-.wedding-invite { color: var(--text-light); margin-bottom: 70px; }
 
-.couple-profiles { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.profile-card { flex: 1; }
-.profile-name { font-family: var(--font-script); font-size: 34px; color: var(--primary-pink); margin-bottom: 12px; }
-.profile-text { color: var(--text-light); font-size: 13px; }
+/* --- ВЕРХНІЙ БЛОК (Суворо 780px ширини) --- */
+.hello-header-container {
+    width: 100%;
+    max-width: 780px;
+    height: auto;
+    min-height: 193.39px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.profile-images { display: flex; align-items: center; position: relative; gap: 15px; }
+.wedding-date { 
+    font-size: 18px; 
+    font-weight: 600; 
+    color: #333333; 
+    margin-bottom: 12px; 
+    letter-spacing: 1px;
+}
+
+.wedding-invite { 
+    color: var(--text-light); 
+    font-size: 18px;
+    font-weight: 400;
+    font-family:sans-serif;
+}
+
+/* --- НИЖНІЙ БЛОК З ПРОФІЛЯМИ НАКАУТ --- */
+.couple-profiles-container {
+    display: flex;
+    align-items: flex-start; /* Вирівнювання елементів по верхньому краю */
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 15px;
+}
+
+/* Колонки з текстом (Розширено до 360px для ідеальних 4 рядків) */
+/* Колонки з текстом (Точна ширина з Figma) */
+.profile-column {
+    width: 324.5px; 
+    min-height: 100.56px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Імена наречених */
+.profile-name { 
+    font-family: var(--font-script); 
+    font-size: 32px; 
+    color: var(--primary-pink); 
+    font-weight: 400;
+    margin-bottom: 15px; 
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.name-groom { margin-left: auto; }
+.name-bride { margin-right: auto; }
+
+/* Текст опису */
+.profile-text { 
+    color: var(--text-light); 
+    font-size: 14px; 
+    line-height: 1.6; /* Комфортна висота для 4-х рядків */
+    font-weight: 300;
+}
+
+/* --- ЦЕНТРАЛЬНІ ЗОБРАЖЕННЯ ТА СЕРЦЕ --- */
+.profile-images-block { 
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    gap: 40px; /* Простір для ідеального розміщення серця */
+}
+
+/* Круглі фотки строго 150x150px */
 .circle-img { 
-    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; 
-    transition: transform 0.4s ease;
-    border: 1px solid #ddd;
-}
-.profile-images:hover .circle-img {
-    transform: scale(1.04);
-}
-.heart-badge {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    background: var(--white); width: 60px; height: 60px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--primary-pink); font-size: 16px; border: 1px solid #f0f0f0; z-index: 2;
-    animation: heartBeat 1.5s infinite;
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease;
 }
 
-@keyframes heartBeat {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+.circle-img:hover {
+    transform: scale(1.03);
+}
+
+/* Серце строго 60x60px чітко по центру */
+.heart-badge {
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    background: var(--white); 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: var(--primary-pink); 
+    font-size: 18px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f5f5f5;
+    z-index: 10;
 }
 
 /* --- 3. WEDDING EVENTS SECTION (Шлях змінено на ../images/beach.jpg) --- */
