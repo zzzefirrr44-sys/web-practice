@@ -362,74 +362,403 @@ body {
     z-index: 10;
 }
 
-/* --- 3. WEDDING EVENTS SECTION (Шлях змінено на ../images/beach.jpg) --- */
+/* ==========================================================================
+   3. WEDDING EVENTS SECTION (ПОВНИЙ ПІКСЕЛЬ-КОНТРОЛЬ ТА ВІДСТУПИ)
+   ========================================================================= */
+
 .events-section {
-    height: 850px;
+    width: 100%;
+    max-width: 1920px;
+    height: 850px; 
+    margin: 0 auto;
+    background: url('../images/event.jpg') no-repeat center center/cover;
+    position: relative;
+    color: var(--white);
+}
+
+.events-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); 
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/event.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+    justify-content: center;
 }
-.events-inner { width: 100%; }
-.events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 975px; margin: 60px auto 0; }
-.event-card {
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(255, 255, 255, 0.12);
-    padding: 45px 35px;
+
+.events-container {
+    width: 100%;
+    max-width: 1140px; 
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px; 
+}
+
+/* Верхній заголовок всієї секції */
+.events-header {
     text-align: center;
+}
+
+.events-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.events-title {
+    font-family: var(--font-script);
+    font-size: 56px;
+    font-weight: 400;
     color: var(--white);
+    line-height: 1.1;
+}
+
+/* Сітка карток */
+.events-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Картка події */
+.event-card {
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1.5px solid rgba(255, 255, 255, 0.7); 
+    width: 440px; 
+    padding: 25px 30px 40px 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
     border-radius: 4px;
-    backdrop-filter: blur(3px);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out; 
 }
+
+/* Заголовок всередині картки */
+.event-card-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 12px; 
+    margin: 0 0 15px 0; 
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5); 
+    transition: all 0.4s ease-in-out;
+}
+
+/* Блок мета-данних */
+.event-meta-box {
+    width: 100%;
+    max-width: 320px; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 12px; 
+}
+
+.meta-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Клас для тексту дати та часу */
+.meta-line-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.5; 
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Опис події (Текст на 5 рядків) */
+.event-description {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+
+/* ==========================================================================
+   ЕФЕКТ НАВЕДЕННЯ (HOVER ANIMATION)
+   ========================================================================= */
+
+/* 1. Картка стає повністю білою та піднімається */
 .event-card:hover {
+    background: #ffffff !important; 
+    border-color: #ffffff !important;
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+}
+
+/* 2. Головний заголовок стає чітким темно-сірим, а нижня лінія тьмяніє */
+.event-card:hover .event-card-title {
+    color: #222222 !important;
+    border-bottom-color: rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* 3. Іконки плавно фарбуються в акцентний рожевий колір */
+.event-card:hover .meta-icon {
+    color: #ea7093 !important; 
+}
+
+/* 4. ВИПРАВЛЕННЯ: Тепер дата і час залізобетонно стають темними і НЕ пропадають */
+.event-card:hover .meta-line-text {
+    color: #444444 !important; 
+}
+
+/* 5. Параграф опису стає акуратним сірим і чудово читається */
+.event-card:hover .event-description {
+    color: #666666 !important; 
+}
+
+/* ==========================================================================
+   4. OUR STORY SECTION (ЧИСТИЙ МАКЕТ + МІКРОАНІМАЦІЯ ПРИ НАВЕДЕННІ)
+   ========================================================================= */
+
+.story-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.story-section .story-container {
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.story-section .story-header {
+    width: 100%;
+    max-width: 780px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.story-section .story-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #999999;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.story-section .story-title {
+    font-family: var(--font-script);
+    font-size: 56px;
+    font-weight: 400;
+    color: #F14E5E;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.story-section .story-header-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #666666;
+    margin: 0;
+}
+
+/* Контейнер таймлайну */
+.story-section .story-timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+/* Центральна лінія таймлайну */
+.story-section .story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #e6e6e6;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Рядки подій */
+.story-section .timeline-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 180px;
+    z-index: 2;
+}
+
+/* Позиціонування ліворуч/праворуч */
+.story-section .item-left {
+    justify-content: flex-start;
+}
+.story-section .item-left .story-block {
+    margin-left: auto;
+    margin-right: calc(50% + 100px); 
+}
+
+.story-section .item-right {
+    justify-content: flex-end;
+}
+.story-section .item-right .story-block {
+    margin-right: auto;
+    margin-left: calc(50% + 100px);
+}
+
+/* Круглые фотки без рамок */
+.story-section .story-img-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%;
+    border: none;       
+    outline: none;     
+    overflow: hidden;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    /* Плавне повернення фото при прибиранні мишки */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+.story-section .story-img-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Текстові картки */
+.story-section .story-block {
+    background: #ffffff;
+    border: none; 
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    
+    /* Головний секрет: плавний перехід для ХОВЕРА (0.3 секунди) */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+}
+
+.story-section .card-first {
+    width: 456px;
+}
+
+.story-section .card-standard {
+    width: 393.23px;
+}
+
+/* --------------------------------------------------------------------------
+   ЕФЕКТ НАВЕДЕННЯ МИШКОЮ (ХОВЕР МІКРОАНІМАЦІЯ)
+   -------------------------------------------------------------------------- */
+.story-section .story-block:hover {
+    /* Картка злегка підстрибує вгору на 5px та стає об'ємнішою */
     transform: translateY(-5px);
-    border-color: var(--primary-pink);
-    box-shadow: var(--glow-effect);
-}
-.event-card h3 { font-size: 16px; letter-spacing: 2px; margin-bottom: 25px; font-weight: 600; }
-.event-meta {
-    display: flex; justify-content: space-between;
-    border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 12px 0; margin-bottom: 25px; font-size: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* --- 4. OUR STORY --- */
-.story-section { padding: 100px 0; background: var(--bg-light); }
-.timeline { position: relative; max-width: 1000px; margin: 0 auto; padding: 30px 0; }
-.timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background-color: #e6e6e6; transform: translateX(-50%); z-index: 1; }
-.timeline-item { display: flex; align-items: center; margin-bottom: 70px; position: relative; width: 100%; }
-.timeline-content { 
-    width: 43%; background: var(--white); padding: 35px; border-radius: 4px; 
-    box-shadow: 0 2px 12px rgba(0,0,0,0.03); position: relative; z-index: 2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.timeline-content:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-}
-.timeline-img-center { position: absolute; left: 50%; transform: translateX(-50%); z-index: 3; }
-.timeline-img-center img { 
-    width: 130px; height: 130px; border-radius: 50%; object-fit: cover; 
-    border: 5px solid var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-    transition: transform 0.3s ease;
-}
-.timeline-item:hover .timeline-img-center img {
-    transform: scale(1.05);
+/* Маленький інтерактив для фото: коли мишка на картці, фотка поруч теж злегка реагує */
+.story-section .timeline-row:hover .story-img-circle {
+    transform: translate(-50%, -50%) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-item.left { justify-content: flex-start; }
-.timeline-item.left .timeline-content { text-align: right; }
-.timeline-item.right { justify-content: flex-end; }
-.timeline-item.right .timeline-content { text-align: left; }
-
-.timeline-item.left .timeline-content::after {
-    content: ''; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);
-    border-width: 10px 0 10px 10px; border-style: solid; border-color: transparent transparent transparent var(--white);
+/* --------------------------------------------------------------------------
+   SVG СТРІЛОЧКИ (БЕЗ КОНТУРІВ)
+   -------------------------------------------------------------------------- */
+.story-section .timeline-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 28px;
+    z-index: 5;
 }
-.timeline-item.right .timeline-content::after {
-    content: ''; position: absolute; top: 50%; left: -10px; transform: translateY(-50%);
-    border-width: 10px 10px 10px 0; border-style: solid; border-color: transparent var(--white) transparent transparent;
+
+.story-section .arrow-right {
+    right: -13px; 
+}
+
+.story-section .arrow-left {
+    left: -13px;
+}
+
+/* Тексти */
+.story-section .story-block-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #222222;
+    margin: 0 0 6px 0;
+}
+
+.story-section .story-date {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #b3b3b3;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.story-section .story-block-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #666666;
+    margin: 0;
 }
 
 /* --- 5. GALLERY SECTION (Квадрат 3х3) --- */
