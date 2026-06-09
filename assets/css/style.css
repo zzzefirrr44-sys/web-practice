@@ -584,7 +584,7 @@ body {
     font-family: var(--font-script);
     font-size: 56px;
     font-weight: 400;
-    color: #F14E5E;
+    color: #F14E95;
     margin: 0 0 20px 0;
     line-height: 1.1;
 }
@@ -761,32 +761,279 @@ body {
     margin: 0;
 }
 
-/* --- 5. GALLERY SECTION (Квадрат 3х3) --- */
-.gallery-section { padding: 100px 0; }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.gallery-item { position: relative; overflow: hidden; aspect-ratio: 1 / 1; border-radius: 4px; cursor: pointer; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-.gallery-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(241, 78, 149, 0.88);
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    opacity: 0; transition: all 0.4s ease; color: var(--white);
-}
-.gallery-item:hover img { transform: scale(1.08); }
-.gallery-item:hover .gallery-overlay { opacity: 1; box-shadow: inset 0 0 40px rgba(0,0,0,0.2); }
+/* ==========================================================================
+   5. WEDDING GALLERY SECTION (ФІКС: ЗМЕНШЕНІ ВІДСТУПИ + ЗБІЛЬШЕНИЙ ЛІЧИЛЬНИК)
+   ========================================================================= */
 
-/* --- 6. COUNTER STATS SECTION (Шлях змінено на ../images/gallery-7.jpg або аналог фону води) --- */
-.stats-section {
-    height: 600px; display: flex; align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/gallery-8.jpg') no-repeat center center/cover;
+.gallery-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
 }
-.stats-container { display: flex; justify-content: space-around; width: 100%; }
-.stat-item { text-align: center; color: var(--white); transition: transform 0.3s ease; }
-.stat-item:hover { transform: scale(1.08); }
-.stat-item .stat-icon { font-size: 35px; margin-bottom: 15px; color: var(--white); transition: color 0.3s; }
-.stat-item:hover .stat-icon { color: var(--primary-pink); text-shadow: var(--glow-effect); }
-.stat-item .stat-number { font-size: 45px; font-weight: 700; margin-bottom: 5px; }
-.stat-item .stat-label { font-size: 11px; letter-spacing: 2px; }
+
+.gallery-section .gallery-container {
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Заголовок усієї секції */
+.gallery-section .gallery-header {
+    width: 100%;
+    max-width: 780px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-section .gallery-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #999999;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.gallery-section .gallery-title {
+    font-family: var(--font-script);
+    font-size: 56px;
+    font-weight: 400;
+    color: #F14E95;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.gallery-section .gallery-header-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #666666;
+    margin: 0;
+}
+
+/* --- Оновлена сітка: зменшені вдвічі відступи --- */
+.gallery-section .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Зменшили відступи в два рази для витонченого вигляду */
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+/* Окрема картка в галереї */
+.gallery-section .gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Рівні квадрати */
+    border-radius: 6px;  /* Заокруглення країв */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Сама фотографія (повна статика) */
+.gallery-section .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Текстовий блок поверх фотографії */
+.gallery-section .gallery-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    z-index: 3;
+    
+    /* Темний градієнт знизу */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Збільшений та чіткіший лічильник фотографій */
+.gallery-section .gallery-item-count {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px; /* Збільшили розмір шрифту */
+    font-weight: 500; /* Зробили помітнішим та жирнішим */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85); /* Більш насичений білий */
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Великий заголовок на фото */
+.gallery-section .gallery-item-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    max-width: 260px;
+}
+/* --- Комірка фотографії --- */
+.gallery-section .gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Рівні квадрати */
+    border-radius: 6px;  /* Заокруглення країв */
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #000000; /* Чорний фон під фоткою для ефекту насиченості */
+}
+
+/* Сама фотографія у спокійному стані */
+.gallery-section .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9; /* Злегка приглушена яскравість у спокійному стані */
+    filter: grayscale(10%) contrast(95%); /* Трохи м'якші кольори */
+    
+    /* Дуже плавний перехід тривалістю 0.4 секунди */
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+/* --- ТОНКА МІКРОАНІМАЦІЯ ПРИ НАВЕДЕННІ МИШКОЮ --- */
+.gallery-section .gallery-item:hover img {
+    opacity: 1; /* Фото стає повністю яскравим */
+    filter: grayscale(0%) contrast(105%); /* Повертається соковитий контраст */
+    transform: scale(1.03); /* Картинка ледь помітно й акуратно збільшується */
+}
+
+/* Контент з текстом (постійно лежить поверх фото внизу) */
+.gallery-section .gallery-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    z-index: 3;
+    
+    /* Темний градієнт знизу для ідеального контрасту тексту */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    /* Текст не повинен заважати кліку по картинці */
+    pointer-events: none; 
+}
+
+/* Збільшений лічильник фотографій */
+.gallery-section .gallery-item-count {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Великий заголовок на фото */
+.gallery-section .gallery-item-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    max-width: 260px;
+}
+
+/* ==========================================================================
+   6. STATS COUNTER SECTION (НАЛАШТУВАННЯ ЗА МАКЕТОМ З FIGMA)
+   ========================================================================= */
+.counter-section {
+    position: relative;
+    background: url('../images/beach.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Ефект паралаксу */
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Напівпрозорий темний шар поверх картинки, як у макеті (40% чорного) */
+.counter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.counter-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.counter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+    margin: 20px 0;
+}
+
+/* Біле коло для іконки */
+.counter-icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Збільшений відступ знизу між іконкою та цифрою */
+    margin-bottom: 25px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Цифри (налаштування строго за скріншотом з Figma) */
+.counter-number {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 100; /* Надтонкий шрифт (Thin) */
+    line-height: 85px;
+    color: #ffffff;
+    display: block;
+    margin: 0;
+}
+
+/* Текстові підписи (сіріші та нежирні, як на 2 та 3 фото) */
+.counter-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400; /* Нежирний звичайний текст */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Напівпрозорий білий дає саме той м'який сірий відтінок на темному тлі */
+    color: rgba(255, 255, 255, 0.7); 
+    margin-top: 5px;
+}
+
 
 /* --- 7. FRIENDS WISHES --- */
 .wishes-section { padding: 100px 0; background: var(--bg-light); }
