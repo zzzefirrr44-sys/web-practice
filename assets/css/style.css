@@ -1,4 +1,7 @@
 /* --- ЗМІННІ ТА КОЛЬОРИ --- */
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --primary-pink: #f14e95;
     --text-dark: #4d4d4d;
@@ -956,157 +959,928 @@ body {
 /* ==========================================================================
    6. STATS COUNTER SECTION (НАЛАШТУВАННЯ ЗА МАКЕТОМ З FIGMA)
    ========================================================================= */
-.counter-section {
-    position: relative;
-    background: url('../images/beach.jpg') no-repeat center center;
+.counter-section{
+    width: 100%;
+    height: 600px;
+
+    background-image: url('../images/beach.jpg');
     background-size: cover;
-    background-attachment: fixed; /* Ефект паралаксу */
-    padding: 100px 0;
-    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
 }
 
-/* Напівпрозорий темний шар поверх картинки, як у макеті (40% чорного) */
-.counter-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.counter-overlay{
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* ЗМІНЕНО: Додали темний напівпрозорий фон поверх картинки */
+    /* 0.45 — це сорок п'ять відсотків затемнення. Якщо треба ще темніше, постав 0.55 або 0.6 */
+    background: rgba(0, 0, 0, 0.45); 
 }
 
-.counter-container {
-    position: relative;
-    z-index: 2;
+.counter-container{
+    width: 100%;
     max-width: 1200px;
+
     margin: 0 auto;
+    padding: 0 20px;
+
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    align-items: center;
 }
 
-.counter-item {
+.counter-item{
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    min-width: 200px;
-    margin: 20px 0;
+    text-align: center;
 }
 
-/* Біле коло для іконки */
-.counter-icon-circle {
+.counter-icon-circle{
     width: 70px;
     height: 70px;
-    background-color: #ffffff;
+
+    background: #ffffff;
     border-radius: 50%;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    /* Збільшений відступ знизу між іконкою та цифрою */
-    margin-bottom: 25px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+
+    margin-bottom: 15px;
 }
 
-/* Цифри (налаштування строго за скріншотом з Figma) */
-.counter-number {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 50px;
-    font-weight: 100; /* Надтонкий шрифт (Thin) */
-    line-height: 85px;
-    color: #ffffff;
-    display: block;
-    margin: 0;
+.counter-icon-circle svg{
+    width: 34px;
+    height: 34px;
 }
 
-/* Текстові підписи (сіріші та нежирні, як на 2 та 3 фото) */
-.counter-label {
-    font-family: 'Work Sans', sans-serif;
+.counter-number{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    font-weight: 100;
+    line-height: 1;
+
+    color: #ffffff; /* Порада: змінено з #d6d6d6 на чистий білий, щоб на темному тлі цифри горіли */
+
+    margin-bottom: 8px;
+}
+
+.counter-label{
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
-    font-weight: 400; /* Нежирний звичайний текст */
-    letter-spacing: 2px;
+    font-weight: 400;
+
+    color: #e0e0e0; /* Порада: зроблено трохи світлішим для кращого контрасту */
+
     text-transform: uppercase;
-    /* Напівпрозорий білий дає саме той м'який сірий відтінок на темному тлі */
-    color: rgba(255, 255, 255, 0.7); 
-    margin-top: 5px;
+    letter-spacing: 1px;
 }
 
-
-/* --- 7. FRIENDS WISHES --- */
-.wishes-section { padding: 100px 0; background: var(--bg-light); }
-.testimonial-container { max-width: 750px; margin: 40px auto 0; text-align: center; background: var(--white); padding: 50px 40px; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-.testimonial-avatar { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 20px; object-fit: cover; border: 3px solid var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.testimonial-author { font-size: 11px; letter-spacing: 2px; margin-bottom: 15px; color: #333; }
-.twitter-brand { color: #1DA1F2; font-weight: 600; }
-.testimonial-text { font-size: 16px; font-style: italic; color: var(--text-light); line-height: 1.8; }
-
-/* --- 8. SERVICES SECTION --- */
-.services-section { padding: 100px 0; }
-.services-content { display: flex; align-items: center; gap: 50px; margin-top: 60px; }
-.services-list { flex: 1.1; display: flex; flex-direction: column; gap: 35px; }
-.service-item { display: flex; gap: 20px; }
-.service-icon {
-    width: 55px; height: 55px; min-width: 55px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    color: var(--primary-pink); font-size: 18px; transition: all 0.3s ease;
-}
-.service-item:hover .service-icon {
-    background-color: var(--primary-pink);
-    color: var(--white);
-    box-shadow: var(--glow-effect);
-    transform: rotate(360deg);
-}
-
-.services-video-mock { flex: 0.9; position: relative; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); }
-.services-video-mock img { width: 100%; height: 100%; object-fit: cover; }
-.services-video-mock .play-btn {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: var(--white); color: var(--primary-pink); width: 65px; height: 65px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; font-size: 20px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;
-}
-.services-video-mock:hover .play-btn {
-    transform: translate(-50%, -50%) scale(1.1);
-    background-color: var(--primary-pink);
-    color: var(--white);
-    box-shadow: var(--glow-effect);
-}
-
-/* --- 9. ATTENDING CTA SECTION (Шлях змінено на ../images/attending.jpg) --- */
-.attending-section {
-    height: 455px; display: flex; align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/attending.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
-}
-.attending-subtitle { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: 10px; font-weight: 300; }
-
-/* --- 10. FOOTER --- */
-.footer { padding: 50px 0; border-top: 1px solid #f0f0f0; }
-.social-links { display: flex; justify-content: center; gap: 20px; }
-.social-links a { color: var(--primary-pink); font-size: 15px; transition: transform 0.3s ease, text-shadow 0.3s ease; }
-.social-links a:hover { transform: translateY(-3px) scale(1.2); text-shadow: var(--glow-effect); }
-
-/* --- АДАПТИВНІСТЬ --- */
-@media (max-width: 992px) {
-    .events-section, .stats-section, .attending-section { height: auto; padding: 80px 0; }
-    .couple-profiles { flex-direction: column; text-align: center; gap: 30px; }
-    .events-grid { grid-template-columns: 1fr; max-width: 500px; }
-    .timeline-line { left: 30px; transform: none; }
-    .timeline-item { flex-direction: row !important; justify-content: flex-start; margin-bottom: 45px; }
-    .timeline-content { width: calc(100% - 100px); margin-left: 80px; text-align: left !important; }
-    .timeline-img-center { left: 30px; transform: translateX(-50%); }
-    .timeline-img-center img { width: 80px; height: 80px; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-content { flex-direction: column; }
-}
-
+/* --- Адаптивність для мобільних пристроїв --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .main-title { font-size: 58px; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .stats-container { flex-direction: column; gap: 35px; }
+  .counter-section {
+    height: auto; /* Додано, щоб на мобільних блок розтягувався під вміст, коли елементи переносяться */
+  }
+
+  .counter-overlay {
+    padding: 50px 20px;
+  }
+  
+  .counter-container {
+    flex-wrap: wrap; 
+    gap: 40px 15px;
+  }
+  
+  .counter-item {
+    flex: 1 1 calc(50% - 15px); 
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-item {
+    flex: 1 1 100%; 
+  }
+}
+
+/* Підключаємо оригінальний шрифт Sacramento з Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@1,400&display=swap');
+
+/* Головна секція — збільшив padding, щоб весь блок став довшим */
+.wishes-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 100px 0; /* Більше простору зверху та знизу */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Контейнер */
+.wishes-container {
+  width: 100%;
+  max-width: 1170px; /* Точна ширина контейнера з Figma */
+  padding: 0 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wishes-header {
+  margin-bottom: 35px;
+}
+
+.wishes-subtitle {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #999999;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+}
+
+/* Рукописний заголовок — ТЕПЕР СТРОГО ЗА МАКЕТОМ */
+.wishes-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 60px; /* Значення з вашого скріншоту */
+  line-height: 90px; /* Значення з вашого скріншоту */
+  color: #F14E95; /* Колір #F14E95 */
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Картка з контентом */
+.wish-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Аватарка (чисте коло 100х100) */
+.wish-avatar-wrap {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.wish-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.wish-card:hover .wish-avatar-wrap {
+  transform: scale(1.05);
+}
+
+/* Мета-текст */
+.wish-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333333;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.wish-source {
+  color: #F14E95;
+  font-weight: 700;
+}
+
+/* Текст цитати */
+/* Оновлений блок тексту цитати строго за інспектором Figma */
+.wish-text {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;        /* Розмір з Figma */
+  line-height: 32px;      /* Інтервал з Figma */
+  font-style: italic;     /* Курсив */
+  font-weight: 400;
+  color: #777777;
+  
+  /* Збільшуємо ширину контейнера, щоб текст не утискався браузером 
+     і переносився виключно завдяки тегам <br> */
+  max-width: 580px;       
+  width: 100%;
+  margin: 0 auto 55px auto; /* Центруємо сам блок та залишаємо відступ знизу */
+  text-align: center;
+}
+
+/* Адаптивність для мобільних екранів */
+@media (max-width: 576px) {
+  .wish-text {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .wish-text br {
+    display: none; /* На мобілках скасовуємо жорсткі переносы, щоб текст красиво ліг по ширині екрана */
+  }
+}
+
+/* Блок пагінації */
+.wish-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ТЕПЕР КРУГЛІ КРАПОЧКИ (10x10px) */
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e0e0e0; /* Сірі неактивні крапочки */
+  border: none;
+  border-radius: 50%; /* Робить їх ідеальними кругами */
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+/* Активна крапочка — рожеве кільце з пустим центром, як на фото */
+.pagination-dot.active {
+  background-color: transparent;
+  border: 2px solid #F14E95;
+  transform: scale(1.1);
+}
+
+.pagination-dot:hover:not(.active) {
+  background-color: #b8b8b8;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@400;600&display=swap');
+
+/* Основна секція */
+/* 1. Головна секція — тепер вона сіра і розтягнута на весь екран */
+.services-section {
+  background-color: #f7f7f7; /* Твій новий світло-сірий фон (можна змінити на #f2f2f2, якщо треба ще темніше) */
+  padding: 80px 0;           /* Внутрішні відступи зверху і знизу, щоб сірий фон мав простоір */
+  width: 100%;
+}
+
+/* 2. Шапка послуг (центруємо контент всередині сірого фону) */
+.services-header {
+  text-align: center;
+  max-width: 1170px;
+  margin: 0 auto 60px auto;   /* auto по боках тримає текст по центру */
+  padding: 0 15px;
+}
+
+/* 3. Контейнер двоколонкового макета (теж тримаємо чітко по центру) */
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  max-width: 1170px;
+  margin: 0 auto;            /* auto по боках тримає блоки з текстом і відео по центру */
+  padding: 0 15px;
+}
+.services-main-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 60px;
+  color: #F14E95;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+}
+.services-header-desc {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  color: #828282;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Ліва сторона з елементами */
+.services-left-side {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Окремий рядок послуги */
+.services-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+.services-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Біле коло під іконку */
+.services-icon-box {
+  width: 54px;
+  height: 54px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Блок тексту з точним обмеженням ширини Фігми */
+.services-text-box {
+  max-width: 421px; /* Примусово переносить слова точно як на макеті */
+}
+
+/* Заголовок і опис — тепер ТОЧНО ОДНОГО кольору */
+.services-item-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #828282; /* Однаковий сірий */
+  margin: 0 0 8px 0;
+}
+.services-item-desc {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #828282; /* Тот самий однаковий сірий */
+  margin: 0;
+}
+
+/* ПРАВА КОЛОНКА: Блок з відео */
+.services-video-block {
+  position: relative;
+  width: 555px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+.services-video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Кругла кнопка Play (Strictly 90x90px) */
+.services-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 25px rgba(241, 78, 149, 0.25);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+/* Ефект затемнення для фото відео */
+.services-video-block::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* rgba(0, 0, 0, 0.3) — це чорний колір із прозорістю 30%. 
+     Якщо хочеться зробити ще темніше, змініть 0.3 на 0.4 або 0.5 */
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 1; /* Лягає чітко поверх картинки, але під кнопку */
+  pointer-events: none; /* Щоб шар не заважав натисканню кнопки */
+}
+.services-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0px 12px 30px rgba(241, 78, 149, 0.35);
+}
+.services-play-btn svg {
+  margin: 0; /* Авто-центрування флексом */
+}
+
+/* --- МІКРО-АНІМАЦІЇ НА ХОВЕР --- */
+
+/* Ефект наближення картинки при наведенні на блок відео */
+.services-video-block:hover .services-video-img {
+  transform: scale(1.03);
+}
+
+/* Пульсація кнопки Play при наведенні */
+.services-video-block:hover .services-play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0px 12px 30px rgba(241, 78, 149, 0.4);
+}
+
+/* Акцент на іконках зліва при наведенні на рядок */
+.service-item:hover {
+  transform: translateX(4px);
+}
+.service-item:hover .service-icon-box {
+  background-color: #F14E95;
+}
+.service-item:hover .service-icon-box svg path {
+  fill: #ffffff;
+}
+
+/* --- АДАПТИВНІСТЬ ДЛЯ МОБІЛОК ТА ПЛАНШЕТІВ --- */
+@media (max-width: 992px) {
+  .services-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .services-video-block {
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    aspect-ratio: 555 / 450; /* Зберігає ідеальну пропорцію макету */
+  }
+  
+  .service-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    padding: 60px 0;
+  }
+  .services-title {
+    font-size: 46px;
+    line-height: 60px;
+  }
+  .service-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   9. ARE YOU ATTENDING SECTION (НАЛАШТУВАННЯ З FIGMA)
+   ========================================================================= */
+.attending-section {
+  width: 100%;
+  min-height: 455px; /* Точна висота секції з макета Figma */
+  
+  background-image: url('../images/attending.jpg'); /* Шлях до фонової картинки з кріслами/квітами */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+  display: flex;
+}
+
+.attending-overlay {
+  width: 100%;
+  min-height: 455px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Точне затемнення з панелі кольорів Figma (#000000 40%) */
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 60px 20px; /* Безпечні відступи для мобільних екранів */
+}
+
+.attending-container {
+  width: 100%;
+  max-width: 780px; /* Точна ширина текстового блоку за синьою рамкою Figma */
+  text-align: center;
+}
+
+.attending-title {
+  font-family: 'Sacramento', cursive; /* Твій кастомний рукописний шрифт */
+  font-size: 60px; /* Стандартний розмір цього шрифту в проекті */
+  font-weight: 400;
+  line-height: 1.2;
+  
+  color: #ffffff; /* Чистий білий колір */
+  
+  margin: 0 0 15px 0;
+}
+
+.attending-desc {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  
+  color: #ffffff80;
+  
+  margin: 0;
+}
+
+/* --- Адаптивність для мобільних пристроїв --- */
+@media (max-width: 768px) {
+  .attending-section, 
+  .attending-overlay {
+    min-height: auto; /* На телефонах блок розтягуватиметься залежно від тексту */
+  }
+  
+  .attending-title {
+    font-size: 44px; /* Зменшуємо розмашистий шрифт, щоб він красиво влізав у екран смартфона */
+    margin-bottom: 10px;
+  }
+  
+  .attending-desc {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   8. SITE FOOTER SECTION (ОНОВЛЕНИЙ ВЕЛИКИЙ РОЗМІР)
+   ========================================================================= */
+.site-footer {
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* Задаємо точну пропорцію: ~60% від попереднього блока (455px * 0.6) */
+  min-height: 270px; 
+  
+  display: flex;
+  align-items: center; /* Центруємо весь вміст по вертикалі */
+  justify-content: center;
+  
+  padding: 40px 0; /* Безпечні відступи для мобілок, щоб текст не лип до країв */
+  box-sizing: border-box;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copy {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #828282;
+  
+  /* Збільшуємо відступ між текстом та іконками для більшого "повітря" */
+  margin: 0 0 28px 0; 
+  letter-spacing: 0.3px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Відстань між іконками залишається 20px */
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+/* Мікро-анімація при наведенні */
+.social-link:hover {
+  transform: translateY(-3px);
+  opacity: 0.75;
+}
+
+.social-link svg {
+  display: block;
+}
+
+/* --- Адаптивність для мобільних --- */
+@media (max-width: 768px) {
+  .site-footer {
+    /* На телефонах робимо блок трохи компактнішим, щоб не займав увесь екран */
+    min-height: 200px; 
+  }
+  
+  .footer-copy {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}
+/* ==========================================================================
+   АДАПТИВНІСТЬ ДЛЯ БЛОКУ HELLO (.hello-section)
+   ========================================================================== */
+/* ==========================================================================
+   ПОВНИЙ БЛОК АДАПТАЦІЇ ЗА СТАНДАРТАМИ (ВСТАВИТИ В КІНЕЦЬ ФАЙЛУ style.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   d) Desktops, large screens – 1025px — 1200px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   c) Small screens, laptops – 769px — 1024px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .navbar {
+        padding: 20px 0;
+    }
+    
+    .main-title {
+        font-size: 65px !important;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   b) iPads, Tablets – 481px — 768px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Навігація */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Шапка (Hero) */
+    .main-title {
+        font-size: 52px !important;
+    }
+    .sub-title {
+        font-size: 20px !important;
+    }
+
+    /* Блок Hello (Профілі) */
+    .couple-profiles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .profile-column {
+        text-align: center !important;
+        width: 100%;
+    }
+    .profile-images-block {
+        order: -1;
+        margin: 10px 0;
+    }
+
+    /* Весільні події */
+    .events-grid {
+        grid-template-columns: 100% !important;
+        gap: 25px;
+    }
+    .event-description br {
+        display: none;
+    }
+
+    /* ТАЙМЛАЙН (Our Story) — Перебудова в одну ліву колонку */
+    .story-timeline::before {
+        left: 30px !important;
+        transform: none;
+    }
+    .timeline-row {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 35px;
+    }
+    .story-img-circle {
+        position: absolute;
+        left: 30px !important;
+        transform: translateX(-50%) !important;
+        width: 55px !important;
+        height: 55px !important;
+        z-index: 5;
+    }
+    .story-block {
+        width: calc(100% - 80px) !important;
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+    }
+    /* Стрілочки повертаємо наліво */
+    .timeline-arrow {
+        left: -14px !important;
+        right: auto !important;
+        transform: scaleX(-1) !important;
+    }
+    .timeline-arrow.arrow-left {
+        transform: none !important;
+    }
+    .story-block-desc br {
+        display: none;
+    }
+
+    /* Галерея */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   a) Mobile devices – 320px — 480px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Меню стає дуже компактним */
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    /* Головний текст */
+    .main-title {
+        font-size: 38px !important;
+        line-height: 1.1;
+    }
+    .sub-title {
+        font-size: 16px !important;
+        letter-spacing: 1px;
+    }
+
+    /* Таймер */
+    .countdown {
+        gap: 8px;
+    }
+    .countdown-item {
+        min-width: 60px;
+        padding: 8px 5px;
+    }
+    .countdown-item .number {
+        font-size: 22px;
+    }
+    .countdown-item .label {
+        font-size: 9px;
+    }
+
+    /* Блок Hello */
+    .couple-profiles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .profile-column {
+        text-align: center !important;
+    }
+    .profile-images-block {
+        order: -1;
+    }
+    .profile-images-block img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    /* Картки подій */
+    .events-grid {
+        grid-template-columns: 100% !important;
+        gap: 20px;
+    }
+    .event-card {
+        padding: 25px 15px !important;
+    }
+    .event-meta-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    .event-description {
+        text-align: center !important;
+    }
+    .event-description br {
+        display: none;
+    }
+
+    /* ТАЙМЛАЙН (Our Story) під самі маленькі екрани */
+    .story-timeline::before {
+        left: 20px !important;
+        transform: none;
+    }
+    .timeline-row {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 30px;
+    }
+    .story-img-circle {
+        position: absolute;
+        left: 20px !important;
+        transform: translateX(-50%) !important;
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .story-block {
+        width: calc(100% - 55px) !important;
+        margin-left: 55px !important;
+        margin-right: 0 !important;
+        padding: 20px 15px !important;
+    }
+    /* Стрілочки */
+    .timeline-arrow {
+        left: -14px !important;
+        right: auto !important;
+        transform: scaleX(-1) !important;
+    }
+    .timeline-arrow.arrow-left {
+        transform: none !important;
+    }
+    .story-block-title {
+        font-size: 16px !important;
+    }
+    .story-block-desc {
+        font-size: 13px;
+    }
+    .story-block-desc br {
+        display: none;
+    }
+
+    /* Галерея в 1 колонку */
+    .gallery-grid {
+        grid-template-columns: 100% !important;
+        gap: 15px;
+    }
+
+    /* Зменшення секційних заголовків */
+    section {
+        padding: 50px 0 !important;
+    }
+    .story-title, .events-title, .gallery-title {
+        font-size: 28px !important;
+    }
+    .section-title-script {
+        font-size: 42px !important;
+    }
 }
