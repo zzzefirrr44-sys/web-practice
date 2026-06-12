@@ -1884,3 +1884,34 @@ body {
         font-size: 42px !important;
     }
 }
+/* Базові стилі для бургера */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+}
+
+/* Для мобільних екранів (до 768px) */
+@media (max-width: 768px) {
+    .burger { display: flex; }
+    
+    .nav-links {
+        display: none; /* Ховаємо меню за замовчуванням */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+}
