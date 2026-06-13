@@ -1,18 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
+const burgerBtn = document.getElementById('burger-btn');
+const navLinks = document.querySelector('.nav-links');
 
-    if (burger && navLinks) { // Перевірка, чи існують ці елементи
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+burgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    
+    // Опціонально: зміна іконки на хрестик
+    const icon = burgerBtn.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+});
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    } else {
-        console.error("Помилка: не знайдено burger або nav-links в HTML!");
-    }
+// Закриття меню при натисканні на посилання
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        burgerBtn.querySelector('i').classList.add('fa-bars');
+        burgerBtn.querySelector('i').classList.remove('fa-times');
+    });
 });
