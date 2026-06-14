@@ -1860,46 +1860,27 @@ body {
 }
 
 
-@media (max-width: 768px) {
-    .burger-menu {
-        display: block; /* Повертаємо кнопку на мобілках */
-        z-index: 1000;
-        position: relative;
-    }
-
-    .nav-links {
-        display: none; /* Приховуємо меню за замовчуванням */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Відступ від верху */
-        left: 0;
-        width: 100%;
-        background: #fff;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex; /* Показуємо меню, коли є клас active */
-    }
-}
-
-/* На десктопі кнопка не потрібна */
-@media (min-width: 769px) {
-    .burger-menu {
-        display: none;
-    }
-}
-/* Додайте це до свого style.css */
 .nav-links a {
-    color: #333; /* Це темно-сірий колір. Змініть на свій, головне — не білий! */
+    color: white; 
     text-decoration: none;
-    padding: 15px;
+    padding: 10px 15px;
     display: block;
 }
 
-/* Перевірте ще раз цей блок, щоб фон був точно білим, а не прозорим */
+.burger-menu {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
     .nav-links {
         display: none; 
         flex-direction: column;
@@ -1907,22 +1888,42 @@ body {
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: #ffffff; /* ФОН МЕНЮ БІЛИЙ */
-        z-index: 999; /* Щоб меню було ПОВЕРХ інших елементів */
+        background-color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
     }
 
     .nav-links.active {
         display: flex;
     }
-}
-/* Примусово показуємо всі елементи в меню */
-.nav-links li {
-    display: block !important;
+
+    .nav-links a {
+        color: #333 !important; 
+        font-weight: bold;
+    }
 }
 
-/* Скидаємо стилі для класу active, якщо вони заважають */
+.nav-links a {
+    color: #888; 
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+
 .nav-links a.active {
-    display: block !important;
-    color: #333 !important; /* Чорний колір, щоб було видно */
-    font-weight: bold;
+    color: white !important;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links a {
+        color: #888 !important; 
+    }
+    
+    .nav-links a.active {
+        color: #333 !important; 
+    }
 }
